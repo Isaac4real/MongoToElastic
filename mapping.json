@@ -1,0 +1,108 @@
+{
+    "mappings": {
+        "properties": {
+            "tenant_id": {
+                "type": "long"
+            },
+            "product_id": {
+                "type": "long"
+            },
+            "availability_by_country": {
+                "type":  "text"
+            },
+            "brand":  {
+                "properties":{
+                    "brand_id": {"type":  "long"},
+                    "name": {"type":  "text"}
+                }
+            },
+            "categories": {
+                "properties":{
+                    "category_id": {"type":  "long"},
+                    "name": {"type":  "text"},
+                    "depth": {"type":  "long"},
+                    "parent_id": {"type":  "long"}
+                }
+            },
+            "country_information": {
+                "type": "nested",
+                "properties":
+                {
+                    "country": {"type": "text"},
+                    "prices":{
+                        "properties":
+                        {
+                            "start_date_utc": {"type": "text"},
+                            "end_date_utc": {"type": "text"},
+                            "promotion_type_id": {"type": "long"},
+                            "final_price": {"type": "float"},
+                            "store_id": {"type": "long"}
+                        }
+                    },
+                    "stock": {"type":  "long"},
+                    "stock_info": {
+                        "type": "nested",
+                        "properties":
+                        {
+                            "stockpoint": {"type": "long"},
+                            "count": {"type": "long"}
+                        }
+                    }
+                }
+            },
+            "department_name": {
+                "type":  "text"
+            },
+            "gender_name": {
+                "type":  "text"
+            },
+            "images": {
+                "properties":{
+                    "order": {"type":  "long"},
+                    "size": {"type":  "text"},
+                    "url": {"type":  "text"},
+                    "is_main": {"type":  "boolean"},
+                    "article_photo_id": {"type":  "long"}
+                }
+            },
+            "is_deleted": {
+                "type":  "boolean"
+            },
+            "is_online": {
+                "type":  "boolean"
+            },
+            "main_color_name": {
+                "type":  "text"
+            },
+            "pre_calculated_tags": {
+                "type":  "text"
+            },
+            "secondary_color_name": {
+                "type":  "text"
+            },
+            "short_description": {
+                "properties":{
+                   "language": {"type":  "text"},
+                   "description": {"type":  "text"}
+               }
+            },
+            "sizes": {
+                "properties":{
+                    "country_code": {"type":  "text"},
+                    "scale_number": {"type":  "long"},
+                    "size_order": {"type":  "long"},
+                    "sizes_by_language": {
+                        "properties":
+                        {
+                            "language": {"type": "text"},
+                            "size": {"type": "text"}
+                        }
+                    }
+                }
+            },
+            "url": {
+                "type":  "text"
+            }
+        }
+    }
+}

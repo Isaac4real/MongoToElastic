@@ -1,0 +1,4 @@
+pymongo
+elasticsearch
+tqdm
+requests
